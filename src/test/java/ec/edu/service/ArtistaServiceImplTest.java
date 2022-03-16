@@ -10,6 +10,7 @@ import java.math.BigDecimal;
 
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -18,6 +19,7 @@ import ec.edu.modelo.Artista;
 
 
 @SpringBootTest
+//@TestMethodOrder()
 class ArtistaServiceImplTest {
 
 	@Autowired
@@ -27,20 +29,20 @@ class ArtistaServiceImplTest {
 	@Test
 	void testGuardarArtista() {
 //		fail("Not yet implemented");
-//		Artista ar = new Artista();
-//		
-//		ar.setId(1);
-//		ar.setApellido("Tapia");
-//		ar.setNombre("Deniis");
-//		ar.setPrecio(new BigDecimal(1000));
+		Artista ar = new Artista();
+		
+		ar.setId(1);
+		ar.setApellido("Tapia");
+		ar.setNombre("Deniis");
+		ar.setPrecio(new BigDecimal(1000));
 //		this.artistaService.modificarArtista(ar);
-		assertNotNull(this.artistaService.buscar(2));
+		assertThat(ar).isNotNull();
 	}
 
 	@Test
 	void testModificarArtista() {
 //		fail("Not yet implemented");
-		assertEquals(1000, this.artistaService.buscar(1).getPrecio());
+		assertThat(this.artistaService.buscar(1).getId()).isNotNull();
 	}
 
 	@Test
@@ -72,7 +74,9 @@ class ArtistaServiceImplTest {
 	void testBuscarPorApellidoNamed() {
 		//fail("Not yet implemented");
 		//assertThat(this.artistaService.buscarPorApellidoNamed("Tapia")).asList();
-		assertThat(this.artistaService.buscarPorApellidoNamed("Tapia")).isNotNull();
+		System.out.println("AQUI ESTA");
+		//System.out.println(this.artistaService.buscarPorApellidoNamed("Tapia").getId());
+		assertThat(this.artistaService.buscarPorApellidoNamed("Tapia").getApellido()).isEqualTo("Tapia");
 	}
 
 	@Test

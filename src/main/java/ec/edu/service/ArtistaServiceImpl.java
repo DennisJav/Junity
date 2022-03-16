@@ -53,7 +53,10 @@ public class ArtistaServiceImpl implements IArtistaService{
 	@Override
 	public Artista buscarPorApellidoNamed(String apellido) {
 		// TODO Auto-generated method stub
+		
 		return this.artistaRepo.buscarArtistaPorApellidoNamed(apellido);
+		
+		
 	}
 
 	@Override
@@ -68,4 +71,5 @@ public class ArtistaServiceImpl implements IArtistaService{
 		return this.artistaRepo.buscarPorApellidoCriteriaApi(apellido);
 	}
 
+	
 }

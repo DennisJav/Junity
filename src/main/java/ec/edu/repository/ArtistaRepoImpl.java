@@ -74,10 +74,7 @@ public class ArtistaRepoImpl implements IArtistaRepo {
 
 	@Override
 	public Artista buscarArtistaPorApellidoNamed(String apellido) {
-		// TODO Auto-generated method stub
-		//
-
-		Query miQuery = this.entityManager.createNamedQuery( "Artista.buscarPorApellido");
+		Query miQuery = this.entityManager.createNamedQuery("Artista.buscarPorApellido");
 		miQuery.setParameter("valor", apellido);
 		return (Artista) miQuery.getSingleResult();
 	}
