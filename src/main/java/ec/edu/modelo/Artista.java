@@ -19,7 +19,6 @@ import javax.persistence.Table;
 public class Artista {
 
 	@Id
-	
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = ("seq_artista"))
 	@SequenceGenerator(name = "seq_artista", sequenceName = "seq_artista",allocationSize = 1)
 	@Column(name = "id")
